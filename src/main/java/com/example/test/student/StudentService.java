@@ -8,22 +8,22 @@ import java.util.List;
 @Service
 public class StudentService {
     @Autowired
-    private StudentRepository employeeRepository;
+    private StudentRepository studentRepository;
 
-    public List<Student> getAllEmployees() {
-        return employeeRepository.findAll();
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
     }
 
-    public Student getEmployeeById(Long id) {
-        return employeeRepository.findById(id).orElse(null);
+    public Student getStudentById(Long id) {
+        return studentRepository.findById(id).orElse(null);
     }
 
-    public Student createOrUpdateEmployee(Student student) {
-        return employeeRepository.save(student);
+    public Student createOrUpdateStudent(Student student) {
+        return studentRepository.save(student);
     }
 
-    public void deleteEmployee(Long id) {
-        employeeRepository.deleteById(id);
+    public void deleteStudent(Long id) {
+        studentRepository.deleteById(id);
     }
 }
 

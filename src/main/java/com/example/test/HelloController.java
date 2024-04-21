@@ -9,7 +9,7 @@ class HelloController {
 
     @GetMapping("/")
     String hello() {
-        return "Hello, world! change1";
+        return "Hello, world! Application is up";
     }
 
     @GetMapping("/test-outbound")

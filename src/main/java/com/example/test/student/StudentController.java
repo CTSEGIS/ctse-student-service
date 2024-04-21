@@ -8,38 +8,38 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/api/students")
 public class StudentController {
     @Autowired
     private StudentService studentService;
 
     @GetMapping
-    public List<Student> getAllEmployees() {
-        return studentService.getAllEmployees();
+    public List<Student> getAllStudents() {
+        return studentService.getAllStudents();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getEmployeeById(@PathVariable Long id) {
-        Student student = studentService.getEmployeeById(id);
+    public ResponseEntity<Student> getStudentById(@PathVariable Long id) {
+        Student student = studentService.getStudentById(id);
         return ResponseEntity.ok(student);
     }
 
     @PostMapping
-    public ResponseEntity<Student> createEmployee(@RequestBody Student student) {
-        Student createdStudent = studentService.createOrUpdateEmployee(student);
+    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
+        Student createdStudent = studentService.createOrUpdateStudent(student);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Student> updateEmployee(@PathVariable Long id, @RequestBody Student student) {
+    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student student) {
         //student.setId(id); // Ensure the correct ID is set
-        Student updatedStudent = studentService.createOrUpdateEmployee(student);
+        Student updatedStudent = studentService.createOrUpdateStudent(student);
         return ResponseEntity.ok(updatedStudent);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
-        studentService.deleteEmployee(id);
+    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
         return ResponseEntity.noContent().build();
     }
 }
