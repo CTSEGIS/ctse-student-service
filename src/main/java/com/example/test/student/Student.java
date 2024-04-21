@@ -11,6 +11,7 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    //test
 
     private String name;
     private String email;
