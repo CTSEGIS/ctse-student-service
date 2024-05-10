@@ -24,7 +24,7 @@ public class StudentController {
         return ResponseEntity.ok(student);
     }
 
-    //test the sonar
+    //test the sonar cloud
     @PostMapping
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
         Student createdStudent = studentService.createOrUpdateStudent(student);
