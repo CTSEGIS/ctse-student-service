@@ -7,6 +7,7 @@ import lombok.Data;
 @Table(name = "students")
 @Data
 public class Student {
+    //test ci/cd
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
